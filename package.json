@@ -1,0 +1,17 @@
+{
+  "name": "chemical",
+  "version": "0.1.0",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "sinon": "^1.9.1",
+    "gulp-rename": "~1.2.0",
+    "gulp-uglify": "~0.2.1",
+    "gulp": "~3.6.1",
+    "browserify": "~3.43.0",
+    "vinyl-source-stream": "~0.1.1"
+  },
+  "scripts": {
+    "build": "npm install && gulp",
+    "test": "mocha"
+  }
+}
