@@ -17,7 +17,7 @@ npm install backfire
 Via Bower:
 
 ```
-bower install backfire
+bower install backfire.js
 ```
 
 ## API
