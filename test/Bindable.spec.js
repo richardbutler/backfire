@@ -1,8 +1,8 @@
 var chai            = require('chai');
 var expect          = chai.expect;
 var sinon           = require('sinon');
-var Bindable        = require('..').Bindable;
-var ClassRegistry   = require('..').ClassRegistry;
+var Bindable        = require('../lib/Bindable');
+var ClassRegistry   = require('../lib/ClassRegistry');
 
 chai.config.includeStack = true;
 

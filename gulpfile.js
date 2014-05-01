@@ -7,13 +7,13 @@ var rename      = require('gulp-rename');
 gulp.task('scripts', function() {
     return browserify('./index')
         .bundle()
-        .pipe(source('chemical.js'))
+        .pipe(source('backfire.js'))
         .pipe(gulp.dest('.'));
 });
 
 gulp.task('uglify', function() {
-    return gulp.src('chemical.js')
-        .pipe(rename('chemical.min.js'))
+    return gulp.src('backfire.js')
+        .pipe(rename('backfire.min.js'))
         .pipe(uglify({
             outSourceMap: true,
             preserveComments: 'some'

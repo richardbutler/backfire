@@ -213,8 +213,11 @@ ArrayList.prototype = Object.create(null, {
         writable: false,
         value: function(items) {
             items = toArray(items);
-            
-            this.source = items.slice();
+
+            this.eventsSuspended = true;
+            this.source = [];
+            this.add(items);
+            this.eventsSuspended = false;
             this.emitChange({ type: ArrayList.RESET });
         }
     },
@@ -363,6 +366,14 @@ var proto = sanitiseProperties({
                 handler.apply(context || this, arguments);
             }
         }, context);
+    },
+
+    set: function(data) {
+        var model = this;
+
+        Object.keys(data).forEach(function(key) {
+            model[key] = data[key];
+        });
     },
 
     onChildChange: function(event) {
@@ -529,11 +540,11 @@ var Bindable = {
 
                 this.emitChange(key, value, oldValue);
             };
-
-            keyConfig['get'] = keyConfig['get'] || function () {
-                return this.__values__[key];
-            };
         }
+
+        keyConfig['get'] = keyConfig['get'] || function () {
+            return this.__values__[key];
+        };
 
         // Kill the default value and assign it as a default
         if (keyConfig.value) {

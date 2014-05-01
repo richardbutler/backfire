@@ -1,8 +1,8 @@
-# Chemical.js
+# Backfire.js
 
 ## What?
 
-Chemical is [yet another JavaScript data binding library] somewhat inspired by Apache Flex's binding mechanism. It was originally written to complement the React view framework, but could be used with anything.
+Backfire is [yet another JavaScript data binding library] somewhat inspired by Apache Flex's binding mechanism. It was originally written to complement the React view framework, but could be used with anything.
 
 It could be used on the client or on the server, but I'm not sure why you would want to do the latter.
 
@@ -11,13 +11,13 @@ It could be used on the client or on the server, but I'm not sure why you would 
 Via NPM:
 
 ```
-npm install chemical
+npm install backfire
 ```
 
 Via Bower:
 
 ```
-bower install chemical
+bower install backfire
 ```
 
 ## API
@@ -25,10 +25,10 @@ bower install chemical
 ### Bindable
 
 ```
-var chemical = require('chemical'); // or window.chemical
+var bf = require('backfire'); // or window.chemical
 
 // Define a class with a schema
-chemical.Bindable.define('User', {
+bf.Bindable.define('User', {
 	forename: {
 		writable: true
 	},
